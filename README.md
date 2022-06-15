@@ -1,3 +1,3 @@
 # NorSand_Teaching
 
-#para 2
+Visualisation of several surfaces on the p-q space is important while understanding the constitutive model "NorSand".
