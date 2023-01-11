@@ -1,13 +1,13 @@
+
+
 <html>
 <head>
 <font size="+2">
-   <h1>NorSand Made Easy</h1>
-   <h4>- Srinivas Vivek Bokkisa and Jorge Macedo</h4>
+   <h1 align="center">NorSand Made Easy</h1>
+   <h4 align="center">- Srinivas Vivek Bokkisa and Jorge Macedo</h4>
 </font>
    <style>
-h1 {text-align: center;}
-h4 {text-align: center;}
-div {text-align: center;}
+	div {text-align: center;}
       iframe[iframetag] {
          border: none;
       }
@@ -19,115 +19,150 @@ div {text-align: center;}
 <body>
 <font size="+2">
 
-<! the following contents provide content that supplements for better understanding of the NorSand model and doesn't include all the model details. Readers should refer to Jefferis book or paper for full details about the model.>
+<!################################INTRO##################################################>
 
-   <p>NorSand is simple, elegant and most widely used constitutive model to capture the behavior of particulate material. 
-   Though its widely accepted, the working prinicpal of the NorSand model may not be completely straightforward to understand for young engineers or students. 
-   The ideas such as "image point", "internal cap", "maximum dilatancy", "maximum image point", etc. makes it really uncomfortable for a beginner to wrap their head around.
-   Explaining these ideas on a black board or a textbook is difficult because of the inherent constraints they hold.
-   We beleive teaching NorSand model can be greatly simplified through animations (interactive plots) that helps visualize and comprehend the basic ideas of the model. 
-   Here we put togehter animations corresponding to traditional loading paths which will help us understand the model better.</p>
+
+   <p>NorSand is a simple, elegant and the most widely used constitutive model to capture the behaviour of particulate material. 
+   Though its widely accepted, the working principle of the NorSand model may not be completely straightforward for many of us.
+   The ideas such as "image point", "internal cap", "maximum dilatancy", "maximum image point", etc. make it uncomfortable for a beginner to wrap his/her head around.
+   Explaining these ideas on a blackboard or a textbook is difficult because of the inherent constraints they hold.
+   We believe teaching the NorSand model (or any constitutive model in general) can be greatly simplified through animations (interactive plots) that help visualize and comprehend the basic ideas of the model. 
+   Here we put together animations corresponding to traditional loading paths which will help you better understand the working principles of the NorSand model.</p>
    
-   <p> Before diving into the animations, we would like to setup the platform to better understand the visualizations. NorSand is a state-parameter based critical state model that falls within the framework of critial state soil mechanics (CSSM). 
-   CSSM is based on two axioms, 1) the existense of unique failure line called the critical state line and 2) the soil state moves towards the critical state with increasing shear strain. 
-   The critical state line (CSL) is fully represented in two spaces, 1) the \(p-q\) space and 2) the \(e-ln(p)\) space (see figure below). 
-   In the \(p-q\) space, CSL is represented by a line passing through origin with a slope equal to critical state stress ratio (\(M\)).
-   Whereas in the \(e-ln(p)\) space, CSL is a line represented with intercept \(\Gamma\) and slope \(\lambda\). 
-   In the \(e-ln(p)\) space, if the current state lies above the critical state line the soil is considered to be "loose" else it is "dense".
- Alternatively, the state of soil can also be inferred from the sign of the state parameter \(\psi\), i.e., positive is loose and negative is dense. </p>
+   <p> Note the material presented here is only supplementary. If you have a general idea of the NorSand model and the critical state framework continue reading to enhance your understanding.
+   If not, we suggest Chapter 3 of Jefferis and Been book is a good place to start aggregating the ideas and eventually come back here. After all, you wouldn't want to miss the beautiful visualizations this page has to offer.
+   
+<!#################################BODY#################################################>
+
+ <h3 align="left"> 1. Setting up the platform </h3> 
+   
+   <p> Before diving into the animations, let's first set up a platform to better understand the visualizations that are coming later. Starting with a quick refresher on the things we know. </p> 
+   
+   <p> NorSand is a state-parameter based critical state model that falls within the framework of critical state soil mechanics (CSSM). 
+   CSSM is based on two axioms, 1) the existence of a unique failure line called the critical state line and 2) the soil state moves towards the critical state when experiencing monotonic distortion. </p>
+   
+   <p> The critical state line (CSL) is fully represented in two spaces, 1) the \(p-q\) space and 2) the \(e-ln(p)\) space (see figure below). 
+   In the \(p-q\) space, CSL is represented by a line passing through the origin with a slope equal to the critical state stress ratio (\(M\)).
+   In the \(e-ln(p)\) space, CSL is a line represented with intercept \(\Gamma\) and slope \(\lambda\). </p>
+ 
+   <p> The brilliant idea that made NorSand (or other CS-based constitutive models) possible is the concept of state parameter \(\psi\). 
+   In the \(e-ln(p)\) space, if the "current state" lies above the CSL the state of soil is considered loose \(\psi>0\) and if it lies below the state is dense \(\psi<0\).
+   In the below figure, the current state represented is dense. </p>
     
 	<div id="iframeDiv">
       <iframe src="Presentation1.jpg" width="1000" height="400" iframetag></iframe>
     </div>
 	
-	<p> In NorSand model, \(p-q\) space is where all the action takes place, so let's look into it with greater detail. Firstly, yield surface is defined in the \(p-q\) space as:</p>
+	<p> In the NorSand model, \(p-q\) space is where all the action takes place, so let's look into it in greater detail. We divided the action elements of the model into three categories as below and explore them in the following subsections. </p>
+	<p> 1. Dilatancy, Yield Surface, and Image point  </p> 
+	<p> 2. Internal cap and Maximum image stress </p>
+	<p> 3. Hardening Law and Critical state </p>
+	
+	<h4> <u> Dilatancy , Yield Surface, and Image point  </u> </h4> 
+	<p> Dilatancy is the ratio of change in volumetric plastic strain to the change in deviatoric plastic strain,  \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). </p>
+	<p> The normality condition in the  \(p-q\) space suggests, \(\frac{dq}{dp}=-\frac{d\varepsilon_v^p}{d\varepsilon_q^p}=-D\)
+	
+	
+	<p> The Yield surface in NorSand is derived from the normality condition and the stress-dilatancy relationship (\(D=M_i-\eta\)) as </p>
 	<p align="center">  \(F=\frac{q}{p}-M_i\left(1-ln\left(\frac{p}{p_i}\right)\right)=0\)</p>
-	<p> where \(p_i\) is the confining stress at an image point and \(M_i=q_i/p_i\) is the stress ratio at image point. Note, image point is the peak point on the yield surface.</p>
-	<p> So, inorder to define the yield surface it is necessary to find \(p_i\) and \(M_i\) for a given current state (\(p, q, \psi\)). </p>
-	<p>\(M_i\) is given by the following expression: </p>
-	<p align="center"> \(M_i=M\left(1-\frac{N\chi_i|\psi_i|}{M_{tc}}\right)\) where \(\chi_i=\frac{M_{tc}\chi_{tc}}{M_{tc}-\lambda\chi_{tc}}\) and \(\psi_i=\psi+\lambda ln\left(\frac{p_i}{p}\right)\)</p>
-	<p> Note \(M_{tc}, \, \chi_{tc}, \, N, \, \lambda \) are all material parameters and are known. \(M\) is the critical state stress ratio and \(\psi\) is the current state, also known. So, \(M_i\) is solely dependent on \(p_i\). </p>
-	<p> Substituting \(M_i\) into the yield surface (\(F=0\)) expression, 
-	<p align="center"> \(\frac{q}{p}=M\left(1-\frac{N\chi_i|\psi+\lambda ln\left(\frac{\textcolor{red}{p_i}}{p}\right)|}{M_{tc}}\right)\left(1-ln\left(\frac{p}{\textcolor{red}{p_i}}\right)\right)\)
-	<p> In the above equation, the only unknown is \(p_i\) and thus can be solved. Once \(p_i\) is obtained we can easily obtain \(M_i\) from its expression. </p>	
-	<p> Eventually, the yield surface can now be defined with the caluclated \(p_i\), \(M_i\). Figure below shows a typical yield surface while highlighting the image point, the current stress state and the CSL in \(p-q\) space.
-    <div id="iframeDiv">
-      <iframe src="Basic.jpg" width="800" height="400" iframetag></iframe>
+	<p> where \(p_i\) is the confining stress at an image point and \(M_i=q_i/p_i\) is the stress ratio at image point.
+	Note, the image point is the peak point on the yield surface and the dilatancy at this point is zero (\(D=0\)). </p>
+    
+	<p> We represent the main ideas in a figure as shown below. Note that the slope normal to yield surface is represented in the figure. From normality,
+	we know the slope of the yield surface at the current stress state is \(-D\) and the normal is \(1/D\). 	
+	
+	<div id="iframeDiv">
+      <iframe src="Basic.jpg" width="800" height="425" iframetag></iframe>
     </div>
 	
-	<p> The above equation of yield surface is obtained from the flowrule. The flow rule in NorSand is given as: </p>
-	<p align="center"> \(D=M_i-\eta\) </p>
-	<p> where \(D\) is the dilatancy and is given as the ratio of change in volumetric plastic strain to the change in deviatoric plastic strain,  \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\).
+	<h4> <u> Internal cap and Maximum image stress </u> </h4> 
+	
+    <p> To have a realistic soil behaviour for dense soils, the yield surface is internally cut off using maximum limit condition for dilation (\(D_{min}\)) in triaxial compression loading. </p>
 
-    <p> To have a realistic soil behavior for dense soils, the yield surface is internally cut off using maximum limit condition for dilation (\(D_{min}\)) and is given as: 
+	<p> Substituting \(D_{min}\) in the stress-dilatancy relationship and later substituting the yield surface equation gives the following condition for maximum dilation point: </p>
 
-    <p align="center"> \(D_{min}=\chi_i \psi_i \) where \(\chi_i\) and \(\psi_i\) defined earlier</p>
-
-
-<p> Substituting \(D_{min}\) in flow rule and later substituting the yield surface equation gives the following condition for maximum dilation point: </p>
-<p align="center">
-    \(\eta_L=M_i\left(1-ln\left(\frac{p}{p_i}\right)_{max}\right); \quad D_{min}=M_i-\eta_L;\) 
-</p>
-<p align="center">
+	<p align="center">
 	\(\left(\frac{p_i}{p}\right)_{max}=exp\left(-\frac{D_{min}}{M_{i,tc}}\right)\)
-</p>
+	</p>
 
-<p> The maximum dilation derived above gives two sub-conditions. One gives the internal cap to the yield surface and other produces a maximum image point condition.
-<p align="center">
+	<p> The maximum dilation derived above gives two sub-conditions. One gives the internal cap to the yield surface and the other produces a maximum image point condition.
+	<p align="center">
      \(p_{cap}=p_i exp\left(\frac{D_{min}}{M_{i,tc}}\right)\) and \(p_{i,max}=pexp\left(-\frac{D_{min}}{M_{i,tc}}\right)\)
-</p>
+	</p>
 
-<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in below Figure. The overall idea is that \(p_{cap}\) is the internal cap of yield surface corresponding to image point 'i' and \(p\) is the internal cap of the yield surface with image point 'i,max'. </p>
+	<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in Figure below. The overall idea is that \(p_{cap}\) is the internal cap of the yield surface corresponding to image point '\(i\)' and \(p\) is the internal cap of a reference maximum yield surface with image point '\(i,max\)'. </p>
 
     <div id="iframeDiv">
       <iframe src="Basic2.jpg" width="900" height="500" iframetag></iframe>
     </div>
 	
-<p> The above figure can simply be represented as below, by keeping intact the important features:
+	<p> The above figure can simply be represented as below, by keeping intact the important features:
 	<div id="iframeDiv">
       <iframe src="Simple.jpg" width="800" height="400" iframetag></iframe>
     </div>
-<p> The hardening/softening (i.e. growth/shrink) of the yield surface is governed by the hardening rule and is given as: </p>
-<p align="center">
-\(\frac{dp_i}{p_i}=H\frac{M_i}{M_{i,tc}}\left(\frac{p}{p_i}\right)^2\left(\frac{p_{i,max}}{p}-\frac{p_i}{p}\right)d\varepsilon_q^p\)
-</p>
-<p> where \(H\) is the hardening parameter which is taken as an input in the model. From the equation it can be observed that the difference \(d=p_{i,max}-p_i\) governs the hardening behavior. If \(d>0\) the yield surface grows else it shrinks. 
-The difference is also highlighted in the figure below (to the left). It is interesting to highlight that at the critical state all the quantities unify i.e., \( p_{cap}= p_i = p_{i,max}=  p \) as shown in figure below (to the right).
-   <div id="iframeDiv">
-      <iframe src="Hardening.jpg" width="1250" height="400" iframetag></iframe>
+
+<h4> <u> Hardening Law and Critical state </u> </h4> 
+
+	<p> The hardening/softening (i.e. growth/shrink) of the yield surface is governed by the hardening rule and is given as </p>
+	<p align="center">
+	\(\frac{dp_i}{p_i}=H\frac{M_i}{M_{i,tc}}\left(\frac{p}{p_i}\right)^2\left(\frac{p_{i,max}-p_i}{p}\right)d\varepsilon_q^p\)
+	</p>
+	<p> where \(H\) is the hardening parameter which is taken as an input in the model. From the equation, it can be observed that the difference \(d=p_{i,max}-p_i\) governs the hardening behaviour. If \(d>0\) the yield surface grows else it shrinks. 
+	The idea of distance is also highlighted in the figure below. </p>
+	<div id="iframeDiv">
+      <iframe src="Hardening.jpg" width="650" height="400" iframetag></iframe>
+    </div>
+	
+	<p>How does the \(p-q\) space look at the critical state? At the critical state all the quantities unify i.e., \( p_{cap}= p_i = p_{i,max}=  p \) and dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) as shown in figure below.
+	</p>
+	<div id="iframeDiv">
+      <iframe src="CS.jpg" width="650" height="425" iframetag></iframe>
     </div>
 
-<p>With this background, lets now dive into the interactive plots generated for typical stress paths. 
-Here you will be able to see the evolution of several components discussed earlier in a full loading path starting from the intial state to the final critical state. </p>
 
-<p> The slider plot below shows the NorSand model response for a typical drained triaxial compression loading on a dense soil. 
-Drag the strain slider at the bottom of the plot to see the evolution of surfaces in \(p-q\) space with respect to the axial strain. 
-You can observe as the strain level increases the size of the yield surface increases. This is because initially \(p_{i,max}-p_i>0\), hence hardening response. 
-But once the strain level reaches to about \(\approx 2.4 \%\), the current stress reaches to the internal cap, i.e., \(p_{cap}=p\) and at the same time \(p_{i,max}=p_i\). 
-Upon futher loading, \(p_{i,max}\) becomes less than \(p_i\) and hence yield surface shrinks gradually. Eventually at the critical state we see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
+<!##################################################################################>
+<h3 align="left"> 2. Visualisations </h3> 
+
+<p>With the platform now set up, lets now dive into the interactive plots that we generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
+In these plots, you will be able to see the evolution of several components in the full stretch of a loading path, i.e., starting from the initial state to the final critical state. 
+All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial strain. Note the extreme right of the slider corresponds to the critical state. </p> 
+The features to look for are the evolution in yield surface (growth/shrink), current stress state, internal cap, image point, and maximum image point. </p>  
+
+<p> Also be excited to see 3D visualisations at the end of this section. </p>
+
+<h4 align="left"> <u> Triaxial drained compression loading </u> </h4> 
  
-
+<p> The first plot corresponds to the NorSand model response for a typical drained triaxial compression loading on dense soil. 
+You can observe that the current stress state is always on the yield surface throughout the loading path. The yield surface grows initially when, \(p_{i,max}-p_i>0\) and once the strain level reaches an extent, the current stress state reaches to internal cap where \(p_{i,max}=p_i\). 
+Upon futher loading, \(p_{i,max}-p_i<0\) and thus yield surface shrinks gradually. Eventually at the critical state we see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
+ 
 
    <div id="iframeDiv">
       <iframe src="NorSand_dense.html" width="1400" height="850" iframetag></iframe>
    </div>
 
-<p> Now lets visualize the NorSand model response for a drained triaxial compression loading on a loose soil.
+<p> Now let's visualize the NorSand model response for a drained triaxial compression loading on loose soil.
 You can observe as the strain level increases the size of the yield surface gradually increases and this continues till the critical state. 
-This is because initially \(p_{i,max}>p_i\) and the distance \(d=p_{i,max}-p_i\) gradually decreases as the loading progresses and eventually the distance becomes \(d=0\) at the critical state. 
-Also at the critical state we see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
+This is because initially the distance \(d=p_{i,max}-p_i>0\) and it gradually decreases as the loading progresses. Eventually, the distance becomes \(d=0\) at the critical state. Hence we observe hardening behaviour all throughout. 
+Also at the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
  
    <div id="iframeDiv">
       <iframe src="NorSand_loose.html" width="1400" height="850" iframetag></iframe>
    </div>
-   
+
+<h4 align="left"> <u> Triaxial undrained compression loading </u> </h4>       
+
+ <p> The two plots below correspond to the undrained triaxial compression loading on dense and loose soils. Take your time with the plots to get the maximum understanding. </p>  
    <div id="iframeDiv">
       <iframe src="NorSand_dense_UD.html" width="1400" height="850" iframetag></iframe>
    </div>
    <div id="iframeDiv">
       <iframe src="NorSand_loose_UD.html" width="1400" height="850" iframetag></iframe>
    </div>
-   
+
+ <h4 align="left"> <u> Simple shear loading </u> </h4>    
+   <p> Simple shear is also the most common loading path explored in geotechnical engineering. 
+   The visualisations for the drained simple shear on dense soil and undrained simple shear on loose soil are shown in the bottom two plots here. Again take your time with the plots and explore all the details. </p>
       <div id="iframeDiv">
       <iframe src="NorSand_dense_DSS.html" width="1650" height="850" iframetag></iframe>
    </div>
@@ -137,19 +172,22 @@ Also at the critical state we see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
    </div>
    
    
-  <h4 align='left'>Advanced 3D Visualization</h4> 
+<h4 align="left"> <u> Advanced 3D Visualization </u> </h4> 
   
-  <p>To allow viewing in 3D stress space several quantities from \(p-q\) space has to be interpolated on to the 3D stress space. </p>
+ <p> Visualisation in \(p-q\) space is already quite revealing but let's take it one step further and see how things evolve when viewed in actual 3D stress space, i.e.,\(\sigma_1-\sigma_2-\sigma_3\) space. </p>
+ 
+ <p> To acheive a 3D visualisation, the quantities of \(p-q\) space should be transformed to quantities of \(\sigma_1-\sigma_2-\sigma_3\) space. 
 
- <p> Suppose if we want to plot critical surface, we know: </p>
-    <p align="center"> \(q_c=M(\theta)p_c\) </p>
-     <p align="center"> \(M(\theta)=M_{tc}g(\theta)\)</p>
-	 <p> For a given $p_c$ we can obtain stress state any angle $\theta$ as below:</p>
-	  <p align="center"> \(tan \theta =\frac{1-2b}{\sqrt{3}}\) </p>
-      <p align="center"> \( b=\frac{\sigma_2-\sigma_3}{\sigma_1-\sigma_3}\) </p>
-       <p align="center"> \(p_c=\frac{\sigma_1+\sigma_2+\sigma_3}{3}\) </p>
-       <p align="center"> \(q_c=M(\theta)*p_c=\sqrt{\frac{1}{2}((\sigma_1-\sigma_3)^2+(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2}\) </p>
-From the last equation, we have three unknowns and three equations, thus can be solved as:
+ <p> For example, if we want to view the critical state line of \(p-q\) space as a surface in 3D stress space we will need a method that does this transformation. Let us explore this method. </p>
+
+ <p> Starting from what we know: </p>
+    <p align="center"> \(q_c=M(\theta)p_c\) and \(M(\theta)=M_{tc}g(\theta)\) </p>
+	
+	 <p> For a given \(p_c\) we can obtain stress state (\((\sigma_1-\sigma_2-\sigma_3)_c\)) for a Lode angle \(\theta\) as below:</p>
+	  <p> 1. Obtain the intermediate stress ratio ('b') from the following expression, \(tan \theta =\frac{1-2b}{\sqrt{3}}\) </p>
+      <p> 2. we know, \( b=\frac{\sigma_2-\sigma_3}{\sigma_1-\sigma_3}\) </p>
+       <p>3. we also know, \(p_c=\frac{\sigma_1+\sigma_2+\sigma_3}{3}\) and \(q_c=M(\theta)*p_c=\sqrt{\frac{1}{2}((\sigma_1-\sigma_3)^2+(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2}\) </p>
+From the above 3 steps, we have the following 3 system of equations with 3 unknowns (\((\sigma_1-\sigma_2-\sigma_3)_c\)), which is solvable.
 <p align="center"> \(\begin{bmatrix}
 q_c/\sqrt{b^2-b+1}\\
 3p_c
@@ -162,15 +200,27 @@ q_c/\sqrt{b^2-b+1}\\
 \end{bmatrix}\) </p>
 <p align='center'> \(\sigma_2=\sigma_3+b(\sigma_1-\sigma_3)\) </p>
 Thus stress state \((\sigma_1,\sigma_2,\sigma_3)_c\) at critical state can be obtained for lode angles varying from \(0-60^0\). 
-The values of other stress states corresponding to \(\theta=60^o-360^o\) can be interpolated due to symmetry of surfaces for every \(60^o\) lode angle. 
-Similarly this process can be repeated for different values of\(p_c\), joining all the points will create a surface in 3D stress state. 
-Same procedure can be repeated to plot the yield surface, image points and maximum image points in the 3D stress space. 
-The resultant 3-dimensional visualisation is shown in below plot. The 3D visualization corresponds to the dense triaxial simulation on dense specimen. 
-Note the 3D visulaization below can be panned around to view plot from different persepectives.</p>
+The values of other stress states corresponding to \(\theta=60^o-360^o\) can be interpolated due to the symmetry of surfaces for every \(60^o\) lode angle. 
+Similarly, this process can be repeated for different values of \(p_c\), joining all the points will create a surface in a 3D stress state. 
+The same procedure can be repeated to plot the yield surface, image points and maximum image points in the 3D stress space. 
+The resultant 3-dimensional visualisation is shown in the plot below. The 3D visualization corresponds to the drained triaxial compression loading simulation on the dense specimen. 
+Pan the below plot around to view the plot from different perspectives.</p>
 
    <div id="iframeDiv">
       <iframe src="global-stress.html" width="1400" height="850" iframetag></iframe>
    </div>
+
+<!################################SUMMARY##################################################>
+ <h3 align="left"> 3. Summary </h3>   
+   <p> Constitutive models are complex and teaching them using traditional means can be a hassle. In this regard, animations can be of great help to unravel the little details of these complex models.    
+   </p> 
+   <p>In this article we put together a series of animations (interactive plots) to help visualize important features of the NorSand constitutive model and see their evolution in traditional loading paths.
+   We presented interactive plots for undrained/drained triaxial compression and simple shear loading paths on dense/loose soils. We also presented a 3D visualisation of the NorSand model in the general stress space.
+</p> 
+<p> Finally, we hope these plots aid anyone who is interested in understanding NorSand constitutive model.
+   </p>
+   
+  P.S.: Please don't hesitate to reach out to us if you have any questions or feedback on the contents of this page. Also, if you have ideas to make this page better we will be very glad to hear from you.
    </font>
 </body>
 </html>
