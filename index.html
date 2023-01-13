@@ -30,7 +30,7 @@
    Here we put together animations corresponding to traditional loading paths which will help you better understand the working principles of the NorSand model.</p>
    
    <p> Note the material presented here is only supplementary. If you have a general idea of the NorSand model and the critical state framework continue reading to enhance your understanding.
-   If not, we suggest Chapter 3 of Jefferis and Been book is a good place to start aggregating the ideas and eventually come back here. After all, you wouldn't want to miss the beautiful visualizations this page has to offer.
+   If not, we suggest going through Chapter 3 of Jefferis and Been book, which is a good place to start aggregating the ideas and eventually come back here. After all, you wouldn't want to miss the insightful visualizations this article has to offer.
    
 <!#################################BODY#################################################>
 
@@ -69,7 +69,7 @@
 	Note, the image point is the peak point on the yield surface and the dilatancy at this point is zero (\(D=0\)). </p>
     
 	<p> We represent the main ideas in a figure as shown below. Note that the slope normal to yield surface is represented in the figure. From normality,
-	we know the slope of the yield surface at the current stress state is \(-D\) and the normal is \(1/D\). 	
+	we know the slope of the yield surface (\(dq/dp\)) at the current stress state is \(-D\) and the normal is \(1/D\). 	
 	
 	<div id="iframeDiv">
       <iframe src="Basic.jpg" width="800" height="425" iframetag></iframe>
@@ -90,7 +90,7 @@
      \(p_{cap}=p_i exp\left(\frac{D_{min}}{M_{i,tc}}\right)\) and \(p_{i,max}=pexp\left(-\frac{D_{min}}{M_{i,tc}}\right)\)
 	</p>
 
-	<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in Figure below. The overall idea is that \(p_{cap}\) is the internal cap of the yield surface corresponding to image point '\(i\)' and \(p\) is the internal cap of a reference maximum yield surface with image point '\(i,max\)'. </p>
+	<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in Figure below. The idea is that \(p_{cap}\) is the internal cap of the yield surface corresponding to image point '\(i\)' and \(p\) is the internal cap of a reference maximum yield surface with image point '\(i,max\)'. </p>
 
     <div id="iframeDiv">
       <iframe src="Basic2.jpg" width="900" height="500" iframetag></iframe>
@@ -113,7 +113,7 @@
       <iframe src="Hardening.jpg" width="650" height="400" iframetag></iframe>
     </div>
 	
-	<p>How does the \(p-q\) space look at the critical state? At the critical state all the quantities unify i.e., \( p_{cap}= p_i = p_{i,max}=  p \) and dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) as shown in figure below.
+	<p> At the critical state all the quantities unify i.e., \( p_{cap}= p_i = p_{i,max}=  p \) and dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) as shown in figure below.
 	</p>
 	<div id="iframeDiv">
       <iframe src="CS.jpg" width="650" height="425" iframetag></iframe>
@@ -123,28 +123,33 @@
 <!##################################################################################>
 <h3 align="left"> 2. Visualisations </h3> 
 
-<p>With the platform now set up, lets now dive into the interactive plots that we generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
+<p>Now that we described important features in the \(p-q\) space, lets now dive into the interactive plots that are generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
 In these plots, you will be able to see the evolution of several components in the full stretch of a loading path, i.e., starting from the initial state to the final critical state. 
-All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial strain. Note the extreme right of the slider corresponds to the critical state. </p> 
+All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial strain. Note the extreme right of the slider corresponds to the stress state near to critical state. </p> 
 The features to look for are the evolution in yield surface (growth/shrink), current stress state, internal cap, image point, and maximum image point. </p>  
 
 <p> Also be excited to see 3D visualisations at the end of this section. </p>
 
 <h4 align="left"> <u> Triaxial drained compression loading </u> </h4> 
  
-<p> The first plot corresponds to the NorSand model response for a typical drained triaxial compression loading on dense soil. 
-You can observe that the current stress state is always on the yield surface throughout the loading path. The yield surface grows initially when, \(p_{i,max}-p_i>0\) and once the strain level reaches an extent, the current stress state reaches to internal cap where \(p_{i,max}=p_i\). 
-Upon futher loading, \(p_{i,max}-p_i<0\) and thus yield surface shrinks gradually. Eventually at the critical state we see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
+<p> First let's see the NorSand model response for a typical drained triaxial compression (TXD) loading on dense soil. 
+From soil mechanics 101, we know dense soils subjected to drained TX loading exhibits a peak at realtively low strain and eventually reaches critical state. 
+Now see the plot below to understand how NorSand models this behavior. The following are some things to observe in the plot: </p>
+ 
+<p> 1. The current stress state is always on the yield surface throughout the loading path. </p> 
+<p> 2. The yield surface grows initially when, \(p_{i,max}-p_i>0\) but as the loading progresses the current stress state reaches to internal cap where \(p_{i,max}=p_i\) and 
+futher loading from this point, \(p_{i,max}-p_i\) becomes \(<0\) and thus yield surface shrinks gradually. This ensures peak in the stress-path.
+<p> 3. The stress state eventually falls on the CSL where we see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rightarrow 0\) or \(1/D \rightarrow \infty\) </p>
  
 
    <div id="iframeDiv">
       <iframe src="NorSand_dense.html" width="1400" height="850" iframetag></iframe>
    </div>
 
-<p> Now let's visualize the NorSand model response for a drained triaxial compression loading on loose soil.
-You can observe as the strain level increases the size of the yield surface gradually increases and this continues till the critical state. 
+<p> Now let's visualize the NorSand model response for a drained triaxial compression loading on loose soil. We know loose soil subjected to drained TX loading experience compression and gains strength gradually and its peak strenght occurs at the critical state.  
+In the plot, you can observe as the strain level increases the size of the yield surface gradually increases and this continues till the critical state. 
 This is because initially the distance \(d=p_{i,max}-p_i>0\) and it gradually decreases as the loading progresses. Eventually, the distance becomes \(d=0\) at the critical state. Hence we observe hardening behaviour all throughout. 
-Also at the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
+At the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rightarrow 0\) or \(1/D \rightarrow \infty\). </p>
  
    <div id="iframeDiv">
       <iframe src="NorSand_loose.html" width="1400" height="850" iframetag></iframe>
@@ -152,7 +157,9 @@ Also at the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
 
 <h4 align="left"> <u> Triaxial undrained compression loading </u> </h4>       
 
- <p> The two plots below correspond to the undrained triaxial compression loading on dense and loose soils. Take your time with the plots to get the maximum understanding. </p>  
+ <p> The two plots below correspond to the undrained triaxial compression loading on dense and loose soils.
+ Similar to drained tests, you can make interesting observations. 
+ We would like you to take time and interact with the plots below to get the maximum understanding. </p>  
    <div id="iframeDiv">
       <iframe src="NorSand_dense_UD.html" width="1400" height="850" iframetag></iframe>
    </div>
@@ -174,7 +181,7 @@ Also at the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
    
 <h4 align="left"> <u> Advanced 3D Visualization </u> </h4> 
   
- <p> Visualisation in \(p-q\) space is already quite revealing but let's take it one step further and see how things evolve when viewed in actual 3D stress space, i.e.,\(\sigma_1-\sigma_2-\sigma_3\) space. </p>
+ <p> Visualisation in \(p-q\) space is already quite revealing but let's take it one step further and see how things evolve when viewed in actual 3D stress space, i.e., \(\sigma_1-\sigma_2-\sigma_3\) space. </p>
  
  <p> To acheive a 3D visualisation, the quantities of \(p-q\) space should be transformed to quantities of \(\sigma_1-\sigma_2-\sigma_3\) space. 
 
@@ -183,11 +190,11 @@ Also at the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \). </p>
  <p> Starting from what we know: </p>
     <p align="center"> \(q_c=M(\theta)p_c\) and \(M(\theta)=M_{tc}g(\theta)\) </p>
 	
-	 <p> For a given \(p_c\) we can obtain stress state (\((\sigma_1-\sigma_2-\sigma_3)_c\)) for a Lode angle \(\theta\) as below:</p>
+	 <p> For a given \(p_c\) we can obtain stress state \((\sigma_1-\sigma_2-\sigma_3)_c\) corresponding to a Lode angle \(\theta \in [0^o,60^o]\) as below:</p>
 	  <p> 1. Obtain the intermediate stress ratio ('b') from the following expression, \(tan \theta =\frac{1-2b}{\sqrt{3}}\) </p>
       <p> 2. we know, \( b=\frac{\sigma_2-\sigma_3}{\sigma_1-\sigma_3}\) </p>
        <p>3. we also know, \(p_c=\frac{\sigma_1+\sigma_2+\sigma_3}{3}\) and \(q_c=M(\theta)*p_c=\sqrt{\frac{1}{2}((\sigma_1-\sigma_3)^2+(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2}\) </p>
-From the above 3 steps, we have the following 3 system of equations with 3 unknowns (\((\sigma_1-\sigma_2-\sigma_3)_c\)), which is solvable.
+From the above 3 steps, we have the following 3 system of equations with 3 unknowns (\((\sigma_1, \sigma_2, \sigma_3)_c\)), which is solvable.
 <p align="center"> \(\begin{bmatrix}
 q_c/\sqrt{b^2-b+1}\\
 3p_c
@@ -201,7 +208,7 @@ q_c/\sqrt{b^2-b+1}\\
 <p align='center'> \(\sigma_2=\sigma_3+b(\sigma_1-\sigma_3)\) </p>
 Thus stress state \((\sigma_1,\sigma_2,\sigma_3)_c\) at critical state can be obtained for lode angles varying from \(0-60^0\). 
 The values of other stress states corresponding to \(\theta=60^o-360^o\) can be interpolated due to the symmetry of surfaces for every \(60^o\) lode angle. 
-Similarly, this process can be repeated for different values of \(p_c\), joining all the points will create a surface in a 3D stress state. 
+Similarly, this process can be repeated for different values of \(p_c\), joining all the points will create a surface in a 3D stress space. 
 The same procedure can be repeated to plot the yield surface, image points and maximum image points in the 3D stress space. 
 The resultant 3-dimensional visualisation is shown in the plot below. The 3D visualization corresponds to the drained triaxial compression loading simulation on the dense specimen. 
 Pan the below plot around to view the plot from different perspectives.</p>
@@ -217,10 +224,12 @@ Pan the below plot around to view the plot from different perspectives.</p>
    <p>In this article we put together a series of animations (interactive plots) to help visualize important features of the NorSand constitutive model and see their evolution in traditional loading paths.
    We presented interactive plots for undrained/drained triaxial compression and simple shear loading paths on dense/loose soils. We also presented a 3D visualisation of the NorSand model in the general stress space.
 </p> 
-<p> Finally, we hope these plots aid anyone who is interested in understanding NorSand constitutive model.
+<p> Finally, we hope these plots aid students/practioners to better understand the working principle of NorSand model.
    </p>
-   
-  P.S.: Please don't hesitate to reach out to us if you have any questions or feedback on the contents of this page. Also, if you have ideas to make this page better we will be very glad to hear from you.
+
+   <p> <b>P.S. 1:</b> We wish to thank Mr. Mike Jefferis (the creator of NorSand model) for his valuable discussions and suggestions during the development of these animations. </p>
+  </p>
+  <p> <b>P.S. 2:</b> Please don't hesitate to reach out to us if you have any questions or feedback on the contents of this page. Also, if you have ideas to make this page better we will be very happy to hear from you. </p>
    </font>
 </body>
 </html>
