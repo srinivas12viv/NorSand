@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
 <font size="+2">
@@ -30,7 +28,7 @@
    Here we have put together animations corresponding to traditional loading paths which will help you better understand the working principles of the NorSand model.</p>
    
    <p> Note the material presented here is only supplementary. If you have a general idea of the NorSand model and the critical state framework continue reading to enhance your understanding.
-   If not, we suggest going through Chapter 3 of the <a href='https://www.taylorfrancis.com/books/mono/10.1201/b19114/soil-liquefaction-mike-jefferies-ken' target="_blank" rel="noopener noreferrer"> Jefferis and Been </a> book, which is a good place to start aggregating the ideas and eventually come back here. Either way you donn't want to miss the insightful visualizations this article has to offer.
+   If not, we suggest going through Chapter 3 of the <a href='https://www.taylorfrancis.com/books/mono/10.1201/b19114/soil-liquefaction-mike-jefferies-ken' target="_blank" rel="noopener noreferrer"> Jefferis and Been </a> book, which is a good place to start aggregating the ideas and eventually come back here. Either way, you don't want to miss the insightful visualizations this article has to offer.
    
 <!#################################BODY#################################################>
 
@@ -61,19 +59,19 @@
 	<h4> <u> Dilatancy , Yield Surface, and Image point  </u> </h4> 
 	<p> Dilatancy is the ratio of change in volumetric plastic strain to the change in deviatoric plastic strain,  \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). </p>
 	
-	<p> In NorSand, the plastic strains increments are directed in the direction normal to the stresses defined by the yield surface (YS), this is referred to as normality principal. 
+	<p> In NorSand, the plastic strain increments are directed in the direction normal to the stresses defined by the yield surface (YS), this is referred to as the normality principle. 
 	In \(p-q\) space normality condition requires, \( \left(\frac{dq}{dp}\right)_{YS}=-\frac{d\varepsilon_v^p}{d\varepsilon_q^p}=-D\) </p>
 	 
-	<p> The stress-dilatancy behavior of soils is an excellent yet simple framework in understanding soil mechanical beahvior. The idea is simple, the friction angle of soil is the sum of the frictional component and the dilational component. 
-	In NorSand, the stress-dilatancy relationship is given as, (\(\eta=M_i+D\)). Where \(M_i\) is the stress-ratio at the image point (more on image point later). 
+	<p> The stress-dilatancy behaviour of soils is an excellent yet simple framework for understanding soil mechanical behaviour. The idea is simple, the friction angle of soil is the sum of the frictional component and the dilational component. 
+	In NorSand, the stress-dilatancy relationship is given as (\(\eta=M_i+D\)). Where \(M_i\) is the stress-ratio at the image point (more on the image point later). 
 	
 	<p> The Yield surface is derived from the normality condition and the stress-dilatancy relationship as </p>
 	<p align="center">  \(F=\frac{q}{p}-M_i\left(1-ln\left(\frac{p}{p_i}\right)\right)=0\)</p>
 	<p> where \(p_i\) is the confining stress at an image point and \(M_i=q_i/p_i\) is the stress ratio at image point.
-Image point is the peak point on the yield surface and describes the size of the yield surface. The dilatancy at image point is zero (\(D=0\)). </p>
+The image point is the peak point on the yield surface and describes the size of the yield surface. The dilatancy at the image point is zero (\(D=0\)). </p>
     
 	<p> We represent the main ideas in a figure as shown below. From normality,
-	we know the slope of the yield surface (\(dq/dp\)) at the current stress state on YS is \(-D\). The normal to slope is \(1/D\) and is represented by a green arrow in the figure below. 	
+	we know the slope of the yield surface (\(dq/dp\)) at the current stress state on YS is \(-D\). The normal to the slope is \(1/D\) and is represented by a green arrow in the figure below. 	
 	
 	<div id="iframeDiv">
       <iframe src="Basic.jpg" width="800" height="450" iframetag></iframe>
@@ -95,7 +93,7 @@ Image point is the peak point on the yield surface and describes the size of the
      \(p_{cap}=p_i\, exp\left(\frac{D_{min}}{M_{i,tc}}\right)\) and \(p_{i,max}=p \, exp\left(-\frac{D_{min}}{M_{i,tc}}\right)\)
 	</p>
 
-	<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in Figure below. The idea is that \(p_{cap}\) is the internal cap of the yield surface corresponding to image point '\(i\)' and \(p_{i,max}\) is the image point corresponding to a reference maxium yield surface whose internal cap is located at the current stress state \(p\). <div id="iframeDiv">
+	<p>The physical representation of \(p_{i,max}\) and \(p_{cap}\) can be seen in Figure below. The idea is that \(p_{cap}\) is the internal cap of the yield surface corresponding to image point '\(i\)' and \(p_{i,max}\) is the image point corresponding to a reference maximum yield surface whose internal cap is located at the current stress state \(p\). <div id="iframeDiv">
       <iframe src="Basic2.jpg" width="900" height="500" iframetag></iframe>
     </div>
 	
@@ -116,7 +114,7 @@ Image point is the peak point on the yield surface and describes the size of the
       <iframe src="Hardening.jpg" width="650" height="400" iframetag></iframe>
     </div>
 	
-	<p> It is interesting to highlight that at the critical state all the quantities merge i.e., \( p_{cap}= p_i = p_{i,max}=  p \). The dilatancy and the rate of dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) and \(\dot{D}=0\).
+	<p> It is interesting to highlight that at the critical state, all the quantities merge i.e., \( p_{cap}= p_i = p_{i,max}=  p \). The dilatancy and the rate of dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) and \(\dot{D}=0\).
 	</p>
 	<div id="iframeDiv">
       <iframe src="CS.jpg" width="650" height="425" iframetag></iframe>
@@ -126,7 +124,7 @@ Image point is the peak point on the yield surface and describes the size of the
 <!##################################################################################>
 <h3 align="left"> 2. Visualisations </h3> 
 
-<p>Now that we described important features in the \(p-q\) space, lets now dive into the interactive plots that are generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
+<p>Now that we described important features in the \(p-q\) space, let's now dive into the interactive plots that are generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
 In these plots, you will be able to see the evolution of several components in the full stretch of a loading path, i.e., starting from the initial state to the final critical state. 
 All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial strain. Note the extreme right of the slider corresponds to the stress state near to critical state. </p> 
 The features to look for are the evolution in yield surface (growth/shrink), current stress state, internal cap, image point, and maximum image point. </p>  
@@ -136,12 +134,12 @@ The features to look for are the evolution in yield surface (growth/shrink), cur
 <h4 align="left"> <u> Triaxial drained compression loading </u> </h4> 
  
 <p> First let's look at the NorSand model response for a typical drained triaxial compression (TXD) loading on dense soil. 
-From soil mechanics 101, we know dense soils subjected to drained TX loading exhibits a peak stress at realtively low strain and eventually reaches critical state. 
-Now see the plot below to understand how NorSand models this behavior. The following are some things to observe in the plot: </p>
+From soil mechanics 101, we know dense soils subjected to drained TX loading exhibit peak stress at relatively low strain and eventually reaches a critical state. 
+Now see the plot below to understand how NorSand models this behaviour. The following are some things to observe in the plot: </p>
  
 <p> 1. The current stress state is always on the yield surface throughout the loading path. </p> 
 <p> 2. The yield surface grows initially when, \(p_{i,max}-p_i>0\) but as the loading progresses the current stress state reaches to internal cap where \(p_{i,max}=p_i\) and with
-futher loading beyond this point, \(p_{i,max}-p_i\) becomes negative and thus yield surface shrinks gradually. This ensures a peak in the stress-path.
+further loading beyond this point, \(p_{i,max}-p_i\) becomes negative and thus yield surface shrinks gradually. This ensures a peak in the stress-path.
 <p> 3. The stress state eventually falls on the CSL where we see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rightarrow 0\) or \(1/D \rightarrow \infty\) </p>
  
 
@@ -161,12 +159,12 @@ At the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rig
 <h4 align="left"> <u> Triaxial undrained compression loading </u> </h4>       
 
  <p> The two plots below correspond to the undrained triaxial compression loading on dense and loose soils.
- We know when subjected to undrained traixial compression, dense (or medium dense) soils initially exhibits contractive response and after certain strain level undergo phase transformation to exhibit dilative response. 
- Whereas loose soils exhibits contractive response all throughtout the loading path. Note contractive represents decrease in \(p\) and dilative represents increase in \(p\).
+ We know when subjected to undrained triaxial compression, dense (or medium-dense) soil initially exhibits contractive response and after a certain strain level it undergoes phase transformation to exhibit dilative response. 
+ Whereas loose soil exhibits contractive response all throughout the loading path. Note contractive represents a decrease in \(p\) and dilative represents an increase in \(p\).
  </p>
  
  Dilatancy plays a key role in deciding the undrained stress path response. We know dilatancy is defined as \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). 
- In undrained loading conditions we know, \(d\varepsilon_v=d\varepsilon^e_v+d\varepsilon^p_v=0\), which implies \(d\varepsilon^e_v=-d\varepsilon^p_v\). We also know change in mean effective stress is bulk modulus times the volumetric elastic strain i.e., \(dp=K*d\varepsilon^e_v\). 
+ In undrained loading conditions we know, \(d\varepsilon_v=d\varepsilon^e_v+d\varepsilon^p_v=0\), which implies \(d\varepsilon^e_v=-d\varepsilon^p_v\). We also know the change in mean effective stress is bulk modulus times the volumetric elastic strain i.e., \(dp=K*d\varepsilon^e_v\). 
  Overall the change in mean effective stress can be given as,
  </p>
  <p align="center"> \(dp=-\frac{K}{\left(\frac{1}{D}\right)}d\varepsilon_q^p\)</p>
@@ -174,10 +172,10 @@ At the critical state we can see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rig
  Let's assume the loading \(d\varepsilon^p_q\) is positive. This implies, if (\(1/D\)) is positive then \(dp\) is negative and \(p\) is decreasing. Similarly, if (\(1/D\)) is negative then \(dp\) is positive and \(p\) is increasing.
 </p>
 
-<p> From the plots below you can observe that the dense soil response is contractive till the direction of \(1/D\) arrow is towards right (i.e., positive) and once the direction changes to left (i.e., negative) dilative response is observed. 
-Similarly in the loose soil response, the direction of \(1/D\) is towards right in the whole loading path, hence contractive all throughout till the critical state.
+<p> From the plots below you can observe that the dense soil response is contractive till the direction of \(1/D\) arrow is towards the right (i.e., positive) and once the direction changes to left (i.e., negative) dilative response is observed. 
+Similarly in the loose soil response, the direction of \(1/D\) is towards the right in the whole loading path, hence contractive all throughout till the critical state.
  
- <p> The changes in deviatoric stress is based on to the same explanation as in drained traixial response. 
+ <p> The change in deviatoric stress is based on the same explanation as in drained triaxial response. 
  As long as \(p_{i,max}-p_i\) is positive, the yields surface grows and deviatoric stress increases but when \(p_{i,max}-p_i\) becomes negative, deviatoric stress starts to decrease by exhibiting peak in the stress path.
 For example in loose soil response, a peak is exhibited in the stress path.</p> 
  
@@ -191,9 +189,30 @@ For example in loose soil response, a peak is exhibited in the stress path.</p>
 
  <h4 align="left"> <u> Simple shear loading </u> </h4>    
    <p> Simple shear is also a common loading path explored in geotechnical engineering. 
-   The visualisations for the drained simple shear on dense soil and undrained simple shear on loose soil are shown in the bottom two plots here. Again take your time with the plots and explore all the details. </p>
+   The visualisations for the drained/undrained simple shear on dense/loose soil are shown in the plots below.  
+   In simple shear testing, the loading strain is applied in the shear direction and thus causing shear stress in the soil. 
+   The presence of shear stress rotates the principal stresses in the soil from the deposition axis and causes anisotropy in the loading. 
+   If major, intermediate and minor stresses are represented as \(\sigma_1\), \(\sigma_2\) and \(\sigma_3\) respectively, in simple shear these stresses are ordered as, \(\sigma_1>\sigma_2>\sigma_3\) which causes a Lode angle (LA) effect or intermediate stress ratio (ISR) effect. 
+   The fact that \(\sigma_2 \neq \sigma_3\) causes LA or ISR effect and the difference in \(\sigma_2-\sigma_3\) controls the intensity of this effect. 	
+   In NorSand, the Lode angle effect is accounted by correcting the slope of the critical state in the \(p-q\) space as 
+   </p>
+   <p align='center'>
+   \(M=M_{tc}g(\theta)\) </p>
+   <p>
+   where \(M_{tc}\) is the slope of CSL in a triaxial compression test and \(g(\theta)\leq 1\) is a function accounting for the Lode angle effect. </p>
+
+<p>In all the plots below you can notice that the slope of the CSL in \(p-q\) is less than \(M_{tc}\) and keeps varying throughout the test and thus rightly accounting for the Lode angle effect. </p> 
+The modelling of the stress paths in drained/ undrained tests follows similar ideas as discussed for triaxial testing. The behavior in \(p-q\) space is still governed by \(p_i\),\(p_{i,max}\) and the direction of \(1/D\) vector. </p>
       <div id="iframeDiv">
       <iframe src="NorSand_dense_DSS.html" width="1650" height="850" iframetag></iframe>
+   </div>
+   
+   <div id="iframeDiv">
+      <iframe src="NorSand_loose_DSS.html" width="1650" height="850" iframetag></iframe>
+   </div>
+   
+   <div id="iframeDiv">
+      <iframe src="NorSand_dense_UDSS.html" width="1650" height="850" iframetag></iframe>
    </div>
    
    <div id="iframeDiv">
@@ -244,12 +263,13 @@ You can pan around the plot below to view it from different perspectives.</p>
    <p> Constitutive models are complex and teaching them using traditional means can be a hassle. In this regard, animations can be of great help to unravel the little details of these complex models.    
    </p> 
    <p>In this article we put together a series of animations (interactive plots) to help visualize important features of the NorSand constitutive model and see their evolution in traditional loading paths.
-   We presented interactive plots for undrained/drained triaxial compression and simple shear loading paths on dense/loose soils. We also presented a 3D visualisation of the NorSand model in the general stress space.
+   We presented interactive plots for undrained/drained triaxial compression and simple shear loading paths on dense/loose soils. We also provided ideas to better understand visualisations and NorSand in general. 
+   Lastly, we presented a 3D visualisation of the NorSand model in the general stress space.
 </p> 
-<p> We hope these plots aid students/practioners to better understand the working principle of NorSand model.
+<p> We hope these plots aid students/practitioners in better understanding the working principle of the NorSand model.
    </p>
 
-   <p> <b>P.S. 1:</b> We wish to thank Mr. Mike Jefferis (the creator of NorSand model) for his valuable discussions and suggestions during the development of these animations. </p>
+   <p> <b>P.S. 1:</b> We wish to thank Mr Mike Jefferis (the creator of the NorSand model) for his valuable discussions and suggestions during the development of these animations. </p>
   </p>
   <p> <b>P.S. 2:</b> Please don't hesitate to reach out to us if you have any questions or feedback on the contents of this page. Also, if you have ideas to make this page better we will be very happy to hear from you. </p>
    </font>
