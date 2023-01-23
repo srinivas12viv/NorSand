@@ -2,7 +2,9 @@
 <head>
 <font size="+2">
    <h1 align="center">NorSand Made Easy</h1>
-   <h4 align="center">- Srinivas Vivek Bokkisa and Jorge Macedo</h4>
+   <h4 align="center">- Srinivas Vivek Bokkisa<sup>1</sup> and Jorge Macedo<sup>2</sup></h4>
+   <p align="center">-<sup>1</sup> PhD Student, Georgia Institute of Technology, sbokkisa3@gatech.edu <br> 
+   -<sup>2</sup> Assistant Professor, Georgia Institute of Technology, jmacedo3@gatech.edu</p>
 </font>
    <style>
 	div {text-align: center;}
@@ -44,7 +46,7 @@
    In the \(e-ln(p)\) space, CSL is a line represented with intercept \(\Gamma\) and slope \(\lambda\). </p>
  
    <p> The brilliant idea that made NorSand (or other CS-based constitutive models) feasible is the concept of state parameter \(\psi\). 
-   In the \(e-ln(p)\) space, if the "current state" lies above the CSL the state of soil is considered loose (contractive) \(\psi>0\) and if it lies below the state is dense (dilative) \(\psi<0\).
+   In the \(e-ln(p)\) space, if the "current state" lies above the CSL, the state of soil is considered loose (contractive) \(\psi>0\) and if it lies below, the state is dense (dilative) \(\psi<0\).
    In the below figure, the current state represented is dense. </p>
     
 	<div id="iframeDiv">
@@ -56,7 +58,7 @@
 	<p> 2. Internal cap and Maximum image stress </p>
 	<p> 3. Hardening Law and Critical state </p>
 	
-	<h4> <u> Dilatancy , Yield Surface, and Image point  </u> </h4> 
+	<h4> <u> Dilatancy, Yield Surface, and Image point  </u> </h4> 
 	<p> Dilatancy is the ratio of change in volumetric plastic strain to the change in deviatoric plastic strain,  \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). </p>
 	
 	<p> In NorSand, the plastic strain increments are directed in the direction normal to the stresses defined by the yield surface (YS), this is referred to as the normality principle. 
@@ -71,7 +73,7 @@
 The image point is the peak point on the yield surface and describes the size of the yield surface. The dilatancy at the image point is zero (\(D=0\)). </p>
     
 	<p> We represent the main ideas in a figure as shown below. From normality,
-	we know the slope of the yield surface (\(dq/dp\)) at the current stress state on YS is \(-D\). The normal to the slope is \(1/D\) and is represented by a green arrow in the figure below. 	
+	we know the slope of the yield surface (\(dq/dp\)) at the current stress state on YS is \(-D\) and we represent the normal, i.e. with slope \(1/D\), as a green arrow in the figure below. 	
 	
 	<div id="iframeDiv">
       <iframe src="Basic.jpg" width="800" height="450" iframetag></iframe>
@@ -104,7 +106,7 @@ The image point is the peak point on the yield surface and describes the size of
 
 <h4> <u> Hardening Law and Critical state </u> </h4> 
 
-	<p> The hardening/softening (i.e. growth/shrink of the yield surface) is governed by the hardening rule given as </p>
+	<p> The hardening/softening behavior (i.e. growth/shrink of the yield surface) is governed by the hardening rule given as </p>
 	<p align="center">
 	\(\frac{dp_i}{p_i}=H\frac{M_i}{M_{i,tc}}\left(\frac{p}{p_i}\right)^2\left(\frac{p_{i,max}-p_i}{p}\right)d\varepsilon_q^p\)
 	</p>
@@ -114,7 +116,7 @@ The image point is the peak point on the yield surface and describes the size of
       <iframe src="Hardening.jpg" width="650" height="400" iframetag></iframe>
     </div>
 	
-	<p> It is interesting to highlight that at the critical state, all the quantities merge i.e., \( p_{cap}= p_i = p_{i,max}=  p \). The dilatancy and the rate of dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) and \(\dot{D}=0\).
+	<p> It is interesting to highlight that at the critical state, all the quantities merge i.e., \( p_{cap}= p_i = p_{i,max}=  p \). The dilatancy and the rate of dilatancy becomes zero \(D=0\) (or \(1/D=\infty\)) and \(\dot{D}=0\) at the critical state.
 	</p>
 	<div id="iframeDiv">
       <iframe src="CS.jpg" width="650" height="425" iframetag></iframe>
@@ -126,7 +128,7 @@ The image point is the peak point on the yield surface and describes the size of
 
 <p>Now that we described important features in the \(p-q\) space, let's now dive into the interactive plots that are generated for some traditional stress paths. The stress paths include drained/undrained triaxial compression and simple shear loading paths on dense/loose soils.
 In these plots, you will be able to see the evolution of several components in the full stretch of a loading path, i.e., starting from the initial state to the final critical state. 
-All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial strain. Note the extreme right of the slider corresponds to the stress state near to critical state. </p> 
+All the plots below have a strain slider attached at the bottom, drag the slider to the right to see the evolution of important features in \(p-q\) space with respect to the axial/shear strain. Note the extreme right of the slider corresponds to the stress state near to critical state. </p> 
 The features to look for are the evolution in yield surface (growth/shrink), current stress state, internal cap, image point, and maximum image point. </p>  
 
 <p> At the end of this section, we also presented visualisations of NorSand model in general 3D stress space.  </p>
@@ -201,7 +203,7 @@ For example in loose soil response, a peak is exhibited in the stress path.</p>
    <p>
    where \(M_{tc}\) is the slope of CSL in a triaxial compression test and \(g(\theta)\leq 1\) is a function accounting for the Lode angle effect. </p>
 
-<p>In all the plots below you can notice that the slope of the CSL in \(p-q\) is less than \(M_{tc}\) and keeps varying throughout the test and thus rightly accounting for the Lode angle effect. </p> 
+<p>In all the plots below you can notice that the slope of the CSL in \(p-q\) is less than \(M_{tc}\) and keeps varying throughout the test as the Lode angle changes. </p> 
 The modelling of the stress paths in drained/ undrained tests follows similar ideas as discussed for triaxial testing. The behavior in \(p-q\) space is still governed by \(p_i\),\(p_{i,max}\) and the direction of \(1/D\) vector. </p>
       <div id="iframeDiv">
       <iframe src="NorSand_dense_DSS.html" width="1650" height="850" iframetag></iframe>
