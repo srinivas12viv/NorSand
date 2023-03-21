@@ -1,7 +1,7 @@
 <html>
 <head>
 <font size="+2">
-   <h1 align="center">Enhancing Norsand's Model Understanding Through Visualizations</h1>
+   <h1 align="center">Enhancing Norsand Model Understanding Through Visualizations</h1>
    <h4 align="center">- Srinivas Vivek Bokkisa<sup>1</sup> and Jorge Macedo<sup>2</sup></h4>
    <h5 align="center">-<sup>1</sup> PhD Candidate, Georgia Institute of Technology, sbokkisa3@gatech.edu <br> 
    -<sup>2</sup> Frederick Olmsted Early Career Professor, Georgia Institute of Technology, jmacedo3@gatech.edu</h5>
@@ -27,7 +27,7 @@ table, th, td {
 <!################################INTRO##################################################>
 
 
-   <p>NorSand is a simple, elegant, and widely used constitutive model to capture particulate materials' behavior formulated by Jefferies (1993) with subsequent updates (e.g., Shuttle and Jefferies, 1998; Ghafghazi and Shuttle, 2008; Shuttle and Jefferies, 2016). Norsand is built on multiple ideas developed since 1885. Jefferies (2018) provides a summary (Table below) that includes key concepts and the institutions involved in developing the ideas/ingredients used in Norsand. A detailed historical recount is provided by Jefferies and Been (2015). Norsand is a general-purpose model but has been particularly used in the field of tailings geotechnics. Most of the recent forensic studies after tailings storage facility failures have used Norsand.</p>
+   <p>NorSand is a simple, elegant, and widely used constitutive model to capture particulate materials' behavior formulated by Jefferies (1993) with subsequent updates (e.g., Shuttle and Jefferies, 1998; Jefferies and Shuttle, 2002 and 2011). Norsand is built on multiple ideas developed since 1885. Jefferies (2018) provides a summary (Table below) that includes key concepts and the institutions involved in developing the ideas/ingredients used in Norsand (considering contributions before the first realease on 1993). A detailed historical recount is provided by Jefferies and Been (2015). Norsand is a general-purpose model but has been particularly used in the field of tailings geotechnics for static liquefaction problems. Indeed, most of the recent forensic studies after tailings storage facility failures have used Norsand.</p>
    
   
    <table style="width:60%;font-size:90%">
@@ -58,7 +58,7 @@ table, th, td {
   </tr>
       <tr>
     <td>1951</td>
-    <td>THEOREM thermodynamics &#8594 Plasticity </td>
+    <td> Thermodynamics and plasticity </td>
     <td>Brown</td>
   </tr>
   <tr>
@@ -95,7 +95,7 @@ table, th, td {
 </table>
 
    
-   <p> Norsand is built based on simple principles; however, concepts such as “image point,” “internal cap,” “maximum dilatancy,” “yield surface evolution,” etc. could impose some challenges on understanding how Norsand’s basic ideas work in practice. Explaining these ideas on a blackboard or a textbook is difficult because of their inherent constraints. We believe teaching the NorSand model (or any constitutive model in general) can be greatly simplified through animations (interactive plots) that help visualize the basic ideas of the model. The use of visualization techniques for improving the learning experience in engineering has been demonstrated to be effective (<a href='https://soilmodels.com/soilanim/' target="_blank" rel="noopener noreferrer"> Animating Soil Models </a>). Here, we have put together Norsand animations corresponding to traditional loading paths; the animations can be used as a tool to illustrate the working principles of the NorSand model. The ultimate goal of this article is to flatten the learning curve of the Norsand model. </p>
+   <p> Norsand is built based on simple principles; however, concepts such as “image point,” “internal cap,” “maximum dilatancy,” “yield surface evolution,” etc. could impose some challenges on understanding how Norsand’s basic ideas work in practice. Explaining these ideas on a blackboard or a textbook is difficult because of their inherent constraints. We believe teaching the NorSand model (or any constitutive model in general) can be greatly simplified through animations (interactive plots) that help visualize the basic ideas of the model. The use of visualization techniques for improving the learning experience in engineering has also been highlighted by others (<a href='https://soilmodels.com/soilanim/' target="_blank" rel="noopener noreferrer"> Animating Soil Models </a>). Here, we have put together Norsand animations corresponding to traditional loading paths; the animations can be used as a tool to illustrate the working principles of the NorSand model. The ultimate goal of this article is to flatten the learning curve of the Norsand model. </p>
    
    <p> Note that the background material presented here is not expanding the Norsand principles in detail. If you are looking for a comprehensive treatment,  we suggest going through Chapter 3 of the <a href='https://www.taylorfrancis.com/books/mono/10.1201/b19114/soil-liquefaction-mike-jefferies-ken' target="_blank" rel="noopener noreferrer"> Jefferis and Been </a> book. In any case, you don’t want to miss the insightful visualizations this article offers. The article considers two main sections 1) general background information and 2) visualizations. If you are only interested in the visualizations, please skip section 1. </p>
 
@@ -107,19 +107,19 @@ table, th, td {
    
   
   <p> NorSand is a model developed under the critical state soil mechanics (CSSM) framework. 
-   CSSM is based on two axioms, <b>1)</b> there is a unique reference called the critical state line (we call it the happy place of the soil –regardless of the initial state the soil wants to go there), and <b>2)</b> the soil state moves towards the critical state when experiencing monotonic distortion. </p>
+   Norsand is based on two axioms, <b>1)</b> there is a unique reference called the critical state line (we call it the happy place of the soil –regardless of the initial state the soil wants to go there), and <b>2)</b> the soil state moves towards the critical state when experiencing monotonic distortion. </p>
    
-   <p> The critical state line (CSL) is fully represented in two spaces, 1) the \(p-q\) space and 2) the \(e-ln(p)\) space (see Figure below). 
+   <p> The critical state line (CSL) is commonly represented in two spaces, 1) the \(p-q\) space and 2) the \(e-ln(p)\) space (see Figure below). 
    In the \(p-q\) space, the CSL is represented by a line passing through the origin with a slope equal to the critical state stress ratio (\(M\)).
    In the \(e-ln(p)\) space, CSL is often represented by a line with intercept \(\Gamma\) and slope \(\lambda\) (more complex functional forms are also feasible but are just an "ingredient", not affecting the framework). </p>
  
-   <p> NorSand used the state parameter \(\psi\) concept. In the \(e-ln(p)\) space, if the "current state" lies above the CSL, the state of soil is considered loose (contractive) with  \(\psi>0\) and if it lies below, the state is dense (dilative) with \(\psi<0\). For instance, the Figure below, shows that the initial state is dense. </p>
+   <p> NorSand uses the state parameter \(\psi\) concept. In the \(e-ln(p)\) space, if the "current state" lies above the CSL, the state of soil is considered loose (contractive) with  \(\psi>0\) and if it lies below, the state is dense (dilative) with \(\psi<0\). For instance, the Figure below, shows that the initial state is dense as it is below the CSL. </p>
     
 	<div id="iframeDiv">
       <iframe src="Presentation1.jpg" width="1000" height="400" iframetag></iframe>
     </div>
 	
-	<p> In the NorSand model, the \(p-q\) space is where most of the action takes place, so let's take a closer look. We divided the different model ingredients into three categories listed below. We will explore them in the following subsections. </p>
+	<p> In the NorSand model, the \(p-q\) space is where most of the action takes place. We divided the different model ingredients into three categories listed below, which will be explored in the next sub-sections. </p>
 	<p> 1. Dilatancy, Yield Surface, and Image point  </p> 
 	<p> 2. Internal cap and Maximum image stress </p>
 	<p> 3. Hardening Law and Critical state </p>
@@ -128,7 +128,7 @@ table, th, td {
 	<p> Dilatancy is the ratio of change in volumetric plastic strain to the change in deviatoric plastic strain,  \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). </p>
 	
 	<p> In NorSand, the plastic strain increments are directed in the direction normal to the stresses defined by the yield surface (YS), this is referred to as normality in plasticity theory. 
-	In  the \(p-q\) space, the normality condition requires, \( \left(\frac{dq}{dp}\right)_{YS}=-\frac{d\varepsilon_v^p}{d\varepsilon_q^p}=-D\) (this considers that the strain axes are aligned with the stress axes). </p>
+	In  the \(p-q\) space, the normality condition requires, \( \left(\frac{dq}{dp}\right)_{YS}=-\frac{d\varepsilon_v^p}{d\varepsilon_q^p}=-D\) (this considers that the strain axes are aligned with the stress axes, also known as co-linearity). </p>
 	 
 	<p> Based on stress-dilatancy concepts, the mobilized stress ratio (associated with a "mobilized friction") is the sum of a frictional component and a dilation component. In NorSand, this can be expressed as (\(\eta=M_i+D\)). Where \(M_i\) is the stress-ratio at the image point (more on the image point later). 
 	
@@ -170,7 +170,7 @@ The image point is the tip of the yield surface and describes its size. The dila
 	<p align="center">
 	\(\frac{dp_i}{p_i}=H\frac{M_i}{M_{i,tc}}\left(\frac{p}{p_i}\right)^2\left(\frac{p_{i,max}-p_i}{p}\right)d\varepsilon_q^p\)
 	</p>
-	<p> where \(H\) is the plastic modulus which is an input in the model. The difference \(d=p_{i,max}-p_i\) governs the hardening behavior. If \(d>0\) the yield surface grows; otherwise it shrinks. 
+	<p> where \(H\) is the plastic modulus which is an input to the model. The difference \(d=p_{i,max}-p_i\) governs the hardening behavior. If \(d>0\) the yield surface grows; otherwise it shrinks. 
 	This concept is also highlighted in the Figure below. </p>
 	<div id="iframeDiv">
       <iframe src="Hardening.jpg" width="650" height="400" iframetag></iframe>
@@ -197,7 +197,7 @@ All the plots below have a strain slider attached at the bottom; drag the slider
 <p> 1. The current stress state is always on the yield surface throughout the loading path (the soil is initially normally consolidated in the simulations). </p> 
 <p> 2. The yield surface grows initially when, \(p_{i,max}-p_i>0\), but as the loading progresses, the stress state reaches the internal cap where \(p_{i,max}=p_i\). Further loading beyond this point makes, \(p_{i,max}-p_i\) negative, and thus yield surface shrinks gradually. This is reflected as a peak in the stress-path.
 <p> 3. The stress state eventually reaches the CSL where \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \rightarrow 0\) or \(1/D \rightarrow \infty\) </p>
-<p> 4. There is an initial contractive behavior for low strains, as dilatancy is initially posiitve, then when dilatancy transitions to negative values, there is dilation until the critical state where dilatancy is zero.</p>
+<p> 4. There is an initial contractive behavior for low strains, as dilatancy is initially positive, then when dilatancy transitions to negative values, there is dilation until the critical state where dilatancy is zero.</p>
 
    <div id="iframeDiv">
       <iframe src="NorSand_dense.html" width="1400" height="850" iframetag></iframe>
@@ -214,12 +214,12 @@ At the critical state, we can see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \ri
 
 <h4 align="left"> <u> Undrained Triaxial Compression Loading </u> </h4>       
 
- <p> The next two simulations correspond to undrained triaxial compression tests on dense and loose soils.
- We know when subjected to undrained triaxial compression, dense (or medium-dense) soil initially exhibits a contractive response, and after a certain strain level, it undergoes phase transformation to exhibit a dilative response. 
- In contrast, loose soil exhibits contractive response all throughout the loading path. Note contractive represents a decrease in \(p\), and dilative represents an increase in \(p\).
+ <p> The next two simulations correspond to undrained triaxial compression tests on medium dense and loose soils.
+ When subjected to undrained triaxial compression, a medium-dense soil exhibits initially a contractive response, and after a certain strain level, it exhibits a dilative response (at the so-called transformation point). 
+ In contrast, loose soil exhibits contractive response all throughout the loading path. Note that a contractive response is represented by a decrease in \(p\), and a dilative response is represented by an increase in \(p\).
  </p>
  
- Dilatancy plays a key role in the undrained stress path response. Recalling its definition as \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). 
+ Dilatancy also plays a role undrained stress paths. Recalling its definition as \(D=\frac{d\varepsilon_v^p}{d\varepsilon_q^p}\). 
  In undrained loading, \(d\varepsilon_v=d\varepsilon^e_v+d\varepsilon^p_v=0\), which implies \(d\varepsilon^e_v=-d\varepsilon^p_v\). The change in mean effective stress depends on the bulk modulus and the volumetric elastic strain i.e., \(dp=K*d\varepsilon^e_v\). 
  Thus, the change in mean effective stress can be given as,
  </p>
@@ -228,7 +228,7 @@ At the critical state, we can see \( p_{cap}= p_i = p_{i,max}=  p \) and \(D \ri
  Let's assume the loading \(d\varepsilon^p_q\) is positive. This implies, if (\(1/D\)) is positive then \(dp\) is negative and \(p\) is decreasing. Similarly, if (\(1/D\)) is negative then \(dp\) is positive and \(p\) is increasing.
 </p>
 
-<p> From the plots below, you can observe that the dense soil response is contractive till the direction of \(1/D\) arrow is towards the right (i.e., positive), and once the direction changes to the left (i.e., negative), a dilative response is observed. 
+<p> From the plots below, you can observe that the dense soil response is contractive until the direction of \(1/D\) arrow is towards the right (i.e., positive), and once the direction changes to the left (i.e., negative), a dilative response is observed. 
 Similarly, in the loose soil, the direction of \(1/D\) is towards the right for the entire loading path; hence the response is contractive.
  
  <p> The change in deviatoric stress is based on the same explanation as in the drained triaxial response. 
@@ -246,7 +246,7 @@ For example, in loose soil, a peak is exhibited in the stress path.</p>
    
 <h4 align="left"> <u> Advanced 3D Visualization </u> </h4> 
   
- <p> The visualization presented in a 2D space are already quite insightful but let's take it one step further and see how things evolve when viewed in a 3D stress space, i.e., \(\sigma_1-\sigma_2-\sigma_3\) space. </p>
+ <p> The visualizations presented in a 2D space are already quite insightful but let's take them one step further and see how things evolve when viewed in a 3D stress space, i.e., \(\sigma_1-\sigma_2-\sigma_3\) space. </p>
  
  <p> To achieve a 3D visualization with Norsand, metrics in the \(p-q\) space should be transformed into the \(\sigma_1-\sigma_2-\sigma_3\) space. 
 
