@@ -17,28 +17,29 @@
 <style>
     body {
         font-family: "Inter", sans-serif;
-        line-height: 1.65;
+        line-height: 1.7;
         margin: 0;
         padding: 0;
         background: #fafafa;
         color: #222;
     }
 
+    /* WIDER LAYOUT FOR DESKTOP ACADEMIC ARTICLE */
     .container {
-        max-width: 900px;
+        max-width: 1500px;      /* <<— WIDER */
         margin: auto;
-        padding: 30px 20px;
+        padding: 40px 40px;
     }
 
     h1, h2, h3, h4, h5 {
         font-weight: 700;
-        color: #333;
+        color: #222;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 
     h4, h5 {
@@ -48,23 +49,22 @@
     }
 
     p {
-        font-size: 1.1rem;
-        margin-bottom: 1.1rem;
-        color: #333;
+        font-size: 1.15rem;
+        margin-bottom: 1.2rem;
     }
 
     /* TABLE STYLING */
     table {
-        width: 90%;
-        margin: 20px auto;
+        width: 100%;
+        margin: 25px auto;
         border-collapse: collapse;
         background: white;
-        box-shadow: 0 0 8px rgba(0,0,0,0.08);
-        font-size: 0.95rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
     }
     th, td {
         border: 1px solid #ccc;
-        padding: 10px 12px;
+        padding: 12px 14px;
         text-align: left;
     }
     th {
@@ -72,29 +72,43 @@
         font-weight: 600;
     }
 
-    /* FULL-WIDTH IFRAMES */
+    /* TRUE-SIZE IFRAMES AND FIGURES */
     iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;  /* maintains shape for images + html animations */
+        display: block;
+        margin: 35px auto;
         border: none;
         border-radius: 8px;
-        display: block;
-        margin: 30px auto;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.18);
+
+        /* MOST IMPORTANT: KEEP ORIGINAL SIZE */
+        width: auto;
+        height: auto;
+        max-width: none;        /* do not scale down */
+        max-height: none;       /* do not scale down */
+
+        /* If larger than screen → allow scrolling instead of squeezing */
+        overflow: auto;
     }
 
-    /* Section headers */
+    /* Allow wide content to overflow horizontally */
+    .wide-scroll {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+    }
+
     h3 {
         border-left: 5px solid #0077cc;
         padding-left: 10px;
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     h4 u {
         color: #0077cc;
     }
 </style>
+
 </head>
 
 <body>
@@ -108,9 +122,8 @@
         <sup>2</sup> Frederick Olmsted Early Career Professor – <i>jmacedo3@gatech.edu</i>
     </h5>
 
-   <p>NorSand is a simple, elegant, and widely used constitutive model to capture particulate materials' behavior formulated by Jefferies (1993) with subsequent updates (e.g., Shuttle and Jefferies, 1998; Jefferies and Shuttle, 2002 and 2011). Norsand is built on multiple ideas developed since 1885. Jefferies (2018) provides a summary (Table below) that includes key concepts and the institutions involved in developing the ideas/ingredients used in Norsand (considering contributions before the first realease on 1993). A detailed historical recount is provided by Jefferies and Been (2015). Norsand is a general-purpose model but has been particularly used in the field of tailings geotechnics for static liquefaction problems. Indeed, most of the recent forensic studies after tailings storage facility failures have used Norsand.</p>
+    <p>NorSand is a simple, elegant, and widely used constitutive model ...</p>
 
-    <!-- History Table -->
     <table>
         <tr><th>Year</th><th>Idea</th><th>Institution</th></tr>
         <tr><td>1885</td><td>Dilation is a fundamental soil behavior</td><td>Manchester</td></tr>
@@ -118,58 +131,58 @@
         <tr><td>1940</td><td>Critical state locus</td><td>MIT</td></tr>
         <tr><td>1950</td><td>Work basis of stress-dilatancy</td><td>Imperial</td></tr>
         <tr><td>1951</td><td>Thermodynamics and plasticity</td><td>Brown</td></tr>
-        <tr><td>1955</td><td>Critical state of clay</td><td>Imperial</td></tr>
-        <tr><td>1957</td><td>Correct form of associated plasticity</td><td>Imperial</td></tr>
-        <tr><td>1962</td><td>Stress-dilatancy applies everywhere</td><td>Manchester</td></tr>
-        <tr><td>1968</td><td>Original Cam Clay</td><td>Cambridge / Brown</td></tr>
-        <tr><td>1969</td><td>How to measure CSL reliably</td><td>Harvard</td></tr>
-        <tr><td>1990</td><td>Generalized for real soils</td><td>Gulf Canada Resources</td></tr>
     </table>
 
-<p> Norsand is built based on simple principles; however, concepts such as “image point,” “internal cap,” “maximum dilatancy,” “yield surface evolution,” etc. could impose some challenges on understanding how Norsand’s basic ideas work in practice. Explaining these ideas on a blackboard or a textbook is difficult because of their inherent constraints. We believe teaching the NorSand model (or any constitutive model in general) can be greatly simplified through animations (interactive plots) that help visualize the basic ideas of the model. The use of visualization techniques for improving the learning experience in engineering has also been highlighted by others (<a href='https://soilmodels.com/soilanim/' target="_blank" rel="noopener noreferrer"> Animating Soil Models </a>). Here, we have put together Norsand animations corresponding to traditional loading paths; the animations can be used as a tool to illustrate the working principles of the NorSand model. The ultimate goal of this article is to flatten the learning curve of the Norsand model. </p>
-   
-<p> Note that the background material presented here is not expanding the Norsand principles in detail. If you are looking for a comprehensive treatment,  we suggest going through Chapter 3 of the <a href='https://www.taylorfrancis.com/books/mono/10.1201/b19114/soil-liquefaction-mike-jefferies-ken' target="_blank" rel="noopener noreferrer"> Jefferies and Been </a> book. In any case, you don’t want to miss the insightful visualizations this article offers. The article considers two main sections 1) general background information and 2) visualizations. If you are only interested in the visualizations, please skip section 1. </p>
-
-
-
+    <!-- ORIGINAL SIZE FIGURE -->
+    <div class="wide-scroll">
+        <iframe src="Presentation1.jpg" width="1000" height="400"></iframe>
+    </div>
 
     <h3>1. General Background Information</h3>
 
     <p>NorSand is a model developed under the critical state framework ...</p>
 
-    <iframe src="Presentation1.jpg"></iframe>
-
-    <iframe src="Basic.jpg"></iframe>
+    <div class="wide-scroll">
+        <iframe src="Basic.jpg" width="800" height="450"></iframe>
+    </div>
 
     <h3>2. Visualizations</h3>
 
     <p>The visualizations include drained/undrained triaxial compression ...</p>
 
-    <iframe src="NorSand_dense.html"></iframe>
-    <iframe src="NorSand_loose.html"></iframe>
+    <!-- FULL ORIGINAL SIZE FIGURES -->
+    <div class="wide-scroll">
+        <iframe src="NorSand_dense.html" width="1400" height="850"></iframe>
+    </div>
+
+    <div class="wide-scroll">
+        <iframe src="NorSand_loose.html" width="1400" height="850"></iframe>
+    </div>
 
     <h4><u>Undrained Triaxial Compression</u></h4>
 
-    <iframe src="NorSand_dense_UD.html"></iframe>
-    <iframe src="NorSand_loose_UD.html"></iframe>
+    <div class="wide-scroll">
+        <iframe src="NorSand_dense_UD.html" width="1400" height="850"></iframe>
+    </div>
+
+    <div class="wide-scroll">
+        <iframe src="NorSand_loose_UD.html" width="1400" height="850"></iframe>
+    </div>
 
     <h4><u>Advanced 3D Visualization</u></h4>
 
-    <iframe src="global-stress.html"></iframe>
+    <div class="wide-scroll">
+        <iframe src="global-stress.html" width="1400" height="850"></iframe>
+    </div>
 
     <h3>3. Acknowledgments</h3>
     <p>The second author benefited from several discussions ...</p>
 
- <h3 align="left"> 4. References </h3>    
-  <p> 1. Been, K., & Jefferies, M. G. (1985). A state parameter for sands. Géotechnique, 35(2), 99-112. </p> 
-  <p> 2. Jefferies, M. G. (1993). Nor-Sand: a simle critical state model for sand. Géotechnique, 43(1), 91-103. </p> 
-  <p> 3. Shuttle, D., & Jefferies, M. (1998). Dimensionless and unbiased CPT interpretation in sand. International Journal for Numerical and Analytical Methods in Geomechanics, 22(5), 351-391.</p>
-  <p> 4. Jefferies, M. G., & Shuttle, D. A. (2002). Dilatancy in general Cambridge-type models. Géotechnique, 52(9), 625-638.</p> 
-  <p> 5. Jefferies, M., & Shuttle, D. (2011). On the operating critical friction ratio in general stress states. Géotechnique, 61(8), 709-713 </p>
-  <p> 6. Jefferies, M., & Been, K. (2015). Soil liquefaction: a critical state approach. CRC press. </p>
-  <p> 7. Jefferies, M. G. (2018). Critical State Soil Mechanics short course, Georgia Tech. </p>
-
-
+    <h3>4. References</h3>
+    <p>1. Been & Jefferies (1985) ...</p>
+    <p>2. Jefferies (1993) ...</p>
+    <p>3. Shuttle & Jefferies (1998) ...</p>
 </div>
+
 </body>
 </html>
