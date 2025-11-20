@@ -47,10 +47,6 @@
         margin-top: 0;
     }
 
-    .subtitle {
-        color: #555;
-    }
-
     p {
         font-size: 1.1rem;
         margin-bottom: 1.1rem;
@@ -62,9 +58,9 @@
         width: 90%;
         margin: 20px auto;
         border-collapse: collapse;
-        font-size: 0.95rem;
         background: white;
         box-shadow: 0 0 8px rgba(0,0,0,0.08);
+        font-size: 0.95rem;
     }
     th, td {
         border: 1px solid #ccc;
@@ -76,13 +72,16 @@
         font-weight: 600;
     }
 
-    /* IFRAMES */
+    /* FULL-WIDTH IFRAMES */
     iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;  /* maintains shape for images + html animations */
         border: none;
         border-radius: 8px;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        margin: 25px auto;
         display: block;
+        margin: 30px auto;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
     }
 
     /* Section headers */
@@ -95,13 +94,6 @@
     h4 u {
         color: #0077cc;
     }
-
-    /* Centering wrapper */
-    .iframe-wrapper {
-        text-align: center;
-        margin: 30px 0;
-    }
-
 </style>
 </head>
 
@@ -110,106 +102,67 @@
 <div class="container">
 
     <h1>Enhancing Norsand Model Understanding Through Visualizations</h1>
-    <h4 class="subtitle">Srinivas Vivek Bokkisa<sup>1</sup> &nbsp; and &nbsp; Jorge Macedo<sup>2</sup></h4>
-    <h5 class="subtitle">
-        <sup>1</sup> PhD Candidate, Georgia Tech — <i>sbokkisa3@gatech.edu</i> <br>
-        <sup>2</sup> Frederick Olmsted Early Career Professor — <i>jmacedo3@gatech.edu</i>
+    <h4>Srinivas Vivek Bokkisa<sup>1</sup> &nbsp; and &nbsp; Jorge Macedo<sup>2</sup></h4>
+    <h5>
+        <sup>1</sup> PhD Candidate, Georgia Institute of Technology – <i>sbokkisa3@gatech.edu</i><br>
+        <sup>2</sup> Frederick Olmsted Early Career Professor – <i>jmacedo3@gatech.edu</i>
     </h5>
 
-
-    <!-- ---------------- INTRO SECTION ---------------- -->
     <p>NorSand is a simple, elegant, and widely used constitutive model ...</p>
 
-
-    <!-- HISTORY TABLE -->
+    <!-- History Table -->
     <table>
-        <tr>
-            <th>Year</th>
-            <th>Idea</th>
-            <th>Institution</th>
-        </tr>
-
+        <tr><th>Year</th><th>Idea</th><th>Institution</th></tr>
         <tr><td>1885</td><td>Dilation is a fundamental soil behavior</td><td>Manchester</td></tr>
         <tr><td>1935</td><td>Critical state as limit of dilation behavior</td><td>Harvard</td></tr>
         <tr><td>1940</td><td>Critical state locus</td><td>MIT</td></tr>
         <tr><td>1950</td><td>Work basis of stress-dilatancy</td><td>Imperial</td></tr>
         <tr><td>1951</td><td>Thermodynamics and plasticity</td><td>Brown</td></tr>
         <tr><td>1955</td><td>Critical state of clay</td><td>Imperial</td></tr>
-        <tr><td>1957</td><td>Correct form of associated plasticity for soils</td><td>Imperial</td></tr>
+        <tr><td>1957</td><td>Correct form of associated plasticity</td><td>Imperial</td></tr>
         <tr><td>1962</td><td>Stress-dilatancy applies everywhere</td><td>Manchester</td></tr>
         <tr><td>1968</td><td>Original Cam Clay</td><td>Cambridge / Brown</td></tr>
         <tr><td>1969</td><td>How to measure CSL reliably</td><td>Harvard</td></tr>
         <tr><td>1990</td><td>Generalized for real soils</td><td>Gulf Canada Resources</td></tr>
     </table>
 
+    <iframe src="Presentation1.jpg"></iframe>
 
-    <p>Norsand is built based on simple principles ...</p>
-
-
-    <!-- Example Figure -->
-    <div class="iframe-wrapper">
-        <iframe src="Presentation1.jpg" width="900" height="380"></iframe>
-    </div>
-
-
-    <!-- ---------------- BACKGROUND SECTION ---------------- -->
     <h3>1. General Background Information</h3>
 
-    <p>NorSand is a model developed under the ...</p>
+    <p>NorSand is a model developed under the critical state framework ...</p>
 
-    <div class="iframe-wrapper">
-        <iframe src="Basic.jpg" width="800" height="420"></iframe>
-    </div>
+    <iframe src="Basic.jpg"></iframe>
 
-
-    <!-- ---------------- VISUALIZATION SECTION ---------------- -->
     <h3>2. Visualizations</h3>
 
     <p>The visualizations include drained/undrained triaxial compression ...</p>
 
-    <div class="iframe-wrapper">
-        <iframe src="NorSand_dense.html" width="1200" height="800"></iframe>
-    </div>
-
-    <div class="iframe-wrapper">
-        <iframe src="NorSand_loose.html" width="1200" height="800"></iframe>
-    </div>
-
+    <iframe src="NorSand_dense.html"></iframe>
+    <iframe src="NorSand_loose.html"></iframe>
 
     <h4><u>Undrained Triaxial Compression</u></h4>
 
-    <div class="iframe-wrapper">
-        <iframe src="NorSand_dense_UD.html" width="1200" height="800"></iframe>
-    </div>
+    <iframe src="NorSand_dense_UD.html"></iframe>
+    <iframe src="NorSand_loose_UD.html"></iframe>
 
-    <div class="iframe-wrapper">
-        <iframe src="NorSand_loose_UD.html" width="1200" height="800"></iframe>
-    </div>
-
-
-    <!-- ---------------- 3D SECTION ---------------- -->
     <h4><u>Advanced 3D Visualization</u></h4>
 
-    <div class="iframe-wrapper">
-        <iframe src="global-stress.html" width="1200" height="800"></iframe>
-    </div>
+    <iframe src="global-stress.html"></iframe>
 
-
-    <!-- ---------------- ACKNOWLEDGEMENTS ---------------- -->
     <h3>3. Acknowledgments</h3>
     <p>The second author benefited from several discussions ...</p>
 
-    <!-- ---------------- REFERENCES ---------------- -->
-    <h3>4. References</h3>
-    <p>1. Been, K., & Jefferies, M. G. (1985)...</p>
-    <p>2. Jefferies, M. G. (1993)...</p>
-    <p>3. Shuttle, D., & Jefferies, M. (1998)...</p>
-    <p>4. Jefferies, M. G., & Shuttle, D. A. (2002)...</p>
-    <p>5. Jefferies, M., & Shuttle, D. (2011)...</p>
-    <p>6. Jefferies, M., & Been, K. (2015)...</p>
-    <p>7. Jefferies, M. G. (2018)...</p>
+ <h3 align="left"> 4. References </h3>    
+  <p> 1. Been, K., & Jefferies, M. G. (1985). A state parameter for sands. Géotechnique, 35(2), 99-112. </p> 
+  <p> 2. Jefferies, M. G. (1993). Nor-Sand: a simle critical state model for sand. Géotechnique, 43(1), 91-103. </p> 
+  <p> 3. Shuttle, D., & Jefferies, M. (1998). Dimensionless and unbiased CPT interpretation in sand. International Journal for Numerical and Analytical Methods in Geomechanics, 22(5), 351-391.</p>
+  <p> 4. Jefferies, M. G., & Shuttle, D. A. (2002). Dilatancy in general Cambridge-type models. Géotechnique, 52(9), 625-638.</p> 
+  <p> 5. Jefferies, M., & Shuttle, D. (2011). On the operating critical friction ratio in general stress states. Géotechnique, 61(8), 709-713 </p>
+  <p> 6. Jefferies, M., & Been, K. (2015). Soil liquefaction: a critical state approach. CRC press. </p>
+  <p> 7. Jefferies, M. G. (2018). Critical State Soil Mechanics short course, Georgia Tech. </p>
 
-</div>  <!-- end container -->
 
+</div>
 </body>
 </html>
